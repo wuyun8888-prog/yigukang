@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>益骨康 - 基于“肠-骨轴”理论的骨骼健康管理专家</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0077BE;
+            --tech-green: #2ecc71;
+            --soft-white: #ffffff;
+            --bg-gray: #f4f7f9;
+            --text-dark: #2c3e50;
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', "Microsoft YaHei", sans-serif; margin: 0; color: var(--text-dark); background: var(--bg-gray); scroll-behavior: smooth; }
+
+        /* 导航栏 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary-blue); }
+        .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0077BE 0%, #00a8ff 100%);
+            color: white;
+            padding: 100px 10%;
+            text-align: center;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto 30px; }
+        .btn-main { background: var(--tech-green); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+        /* 信任徽章 */
+        .trust-bar { background: white; padding: 20px; text-align: center; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .badge { color: #7f8c8d; font-size: 0.9rem; font-weight: bold; }
+
+        /* 内容板块样式 */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary-blue); }
+
+        /* 卡片设计 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primary-blue); margin-top: 0; }
+
+        /* 技术亮点区 */
+        .tech-box { background: var(--text-dark); color: white; border-radius: 20px; padding: 50px; display: flex; align-items: center; gap: 50px; }
+        .tech-text { flex: 1; }
+        .tech-data { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .data-item { text-align: center; border: 1px solid #444; padding: 20px; border-radius: 15px; }
+        .data-item span { display: block; font-size: 2rem; color: var(--tech-green); font-weight: bold; }
+
+        /* 价格卡片 */
+        .pricing-card { border: 2px solid transparent; position: relative; }
+        .pricing-card.popular { border-color: var(--tech-green); }
+        .price { font-size: 2.5rem; font-weight: bold; margin: 20px 0; }
+        .price span { font-size: 1rem; color: #7f8c8d; }
+
+        /* 底部 */
+        footer { background: #1a252f; color: #bdc3c7; padding: 60px 10% 20px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">益骨康 YiGuKang</div>
+        <div class="nav-links">
+            <a href=" ">肠-骨轴原理</a >
+            <a href="#tech">DPH技术</a >
+            <a href="#product">产品方案</a >
+            <a href="#about">关于我们</a >
+            <a href="#" style="background: var(--primary-blue); color:white; padding: 8px 20px; border-radius: 20px;">立即订购</a >
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>从根源改善骨骼健康</h1>
+        <p>基于“肠-骨轴”前沿科学，通过个性化益生菌方案与智能递送技术，为您提供精准的骨质疏松预防方案。</p >
+        <a href="#product" class="btn-main">开启您的精准守护包</a >
+    </header>
+
+    <div class="trust-bar">
+        <div class="badge">● 哈尔滨医科大学技术支持</div>
+        <div class="badge">● 专利号：[待补充]</div>
+        <div class="badge">● 活菌率 > 85.8%</div>
+        <div class="badge">● 16S rRNA 基因测序</div>
+    </div>
+
+    <section id="science">
+        <div class="section-title">
+            <h2>揭秘“肠-骨轴”</h2>
+            <p>肠道不仅是消化器官，更是调节骨骼代谢的核心枢纽</p >
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>免疫调节</h3>
+                <p>特定益生菌通过抑制肠道炎症因子，降低破骨细胞活性，从而减少骨流失。</p >
+            </div>
+            <div class="card">
